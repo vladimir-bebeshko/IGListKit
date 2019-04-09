@@ -8,7 +8,6 @@
 #import "IGListDebugger.h"
 
 #import "IGListDebuggingUtilities.h"
-#import "IGListAdapter+DebugDescription.h"
 
 @implementation IGListDebugger
 
@@ -25,9 +24,6 @@ static NSHashTable<IGListAdapter *> *livingAdaptersTable = nil;
 
 + (NSArray<NSString *> *)adapterDescriptions {
     NSMutableArray *descriptions = [NSMutableArray new];
-    for (IGListAdapter *adapter in livingAdaptersTable) {
-        [descriptions addObject:[adapter debugDescription]];
-    }
     return descriptions;
 }
 
